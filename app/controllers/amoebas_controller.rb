@@ -80,6 +80,6 @@ class AmoebasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def amoeba_params
-      params.require(:amoeba).permit(:name, :talent_id, :generation)
+      params.require(:amoeba).permit(:name, :talent_id, :act_id, :generation)
     end
 end

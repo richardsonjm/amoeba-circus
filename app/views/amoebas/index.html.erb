@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Talent</th>
+      <th>Act</th>
       <th>Generation</th>
       <th></th>
       <th></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= amoeba.name %></td>
         <td><%= @talents.find(amoeba.talent_id).name %></td>
+        <td><%= @acts.find(amoeba.act_id).name %></td>
         <td><%= amoeba.generation %></td>
         <td><%= link_to 'Show', amoeba %></td>
         <td><%= link_to 'Edit', edit_amoeba_path(amoeba) %></td>
