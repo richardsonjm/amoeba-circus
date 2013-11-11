@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+acts = Act.create([{ name: 'Wham!' }, { name: 'Bam!' }, {name: 'Slam!'}])
+
+Amoeba.create(name: 'squishy', act_id: Act.all.find_by(name: 'Wham!').id)
+
+Talent.create([{ name: 'acrobat' }, { name: 'contortionist' }, {name: 'clown'}, {name: 'juggler'}, {name: 'freak'}])
+
+

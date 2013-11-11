@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @amoeba.name %>
+</p>
+
+<p>
+  <strong>Talent:</strong>
+  <%= @talents.find(@amoeba.talent_id).name %>
+</p>
+
+<p>
+  <strong>Act:</strong>
+  <%= @acts.find(@amoeba.act_id).name %>
+</p>
+
+
+<p>
+  <strong>Generation:</strong>
+  <%= @amoeba.generation %>
+</p>
+
+<%= link_to 'Edit', edit_amoeba_path(@amoeba) %> |
+<%= link_to 'Back', amoebas_path %>
