@@ -1,5 +1,6 @@
 class ActsController < ApplicationController
   before_action :set_act, only: [:show, :edit, :update, :destroy]
+  before_action :set_amoebas, only: [:show, :edit, :update, :destroy]
 
   # GET /acts
   # GET /acts.json
@@ -65,6 +66,10 @@ class ActsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_act
       @act = Act.find(params[:id])
+    end
+
+    def set_amoebas
+      @amoebas = Amoeba.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
