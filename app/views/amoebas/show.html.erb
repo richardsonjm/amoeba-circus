@@ -12,13 +12,21 @@
 
 <p>
   <strong>Act:</strong>
-  <%= @acts.find(@amoeba.act_id).name %>
+  <% if @amoeba.act_id %>
+    <%= @acts.find(@amoeba.act_id).name %>
+  <% else %>
+    *none*
+  <% end %>
 </p>
 
 
 <p>
   <strong>Generation:</strong>
   <%= @amoeba.generation %>
+</p>
+
+<p>
+  <strong><a href="/amoebas/<%= @amoeba.id %>/split">Split</a></strong>
 </p>
 
 <%= link_to 'Edit', edit_amoeba_path(@amoeba) %> |

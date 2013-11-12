@@ -18,7 +18,11 @@
       <tr>
         <td><%= amoeba.name %></td>
         <td><%= @talents.find(amoeba.talent_id).name %></td>
-        <td><%= @acts.find(amoeba.act_id).name %></td>
+        <% if amoeba.act_id %>
+          <td><%= @acts.find(amoeba.act_id).name %></td>
+        <% else %>
+          <td>*none*</td>
+        <% end %>
         <td><%= amoeba.generation %></td>
         <td><%= link_to 'Show', amoeba %></td>
         <td><%= link_to 'Edit', edit_amoeba_path(amoeba) %></td>

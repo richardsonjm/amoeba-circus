@@ -1,0 +1,18 @@
+<h1>Give those amoebas some names</h1>
+
+  <form action="/amoebas/<%= @amoeba.id %>/split_create" method="post">
+    <label for="amoeba1[name]">Amoeba 1 Name</label>
+    <input type="text" id="amoeba1[name]" name="amoeba1[name]">
+    <input type="hidden" id="amoeba1[talent_id]" name="amoeba1[talent_id]" value="<%= @amoeba.talent_id %>">
+    <input type="hidden" id="amoeba1[generation]" name="amoeba1[generation]" value="<%= @amoeba.generation + 1 %>">
+
+    <label for="amoeba2[name]">Amoeba 2 Name</label>
+    <input type="text" id="amoeba2[name]" name="amoeba2[name]">
+    <input type="hidden" id="amoeba2[talent_id]" name="amoeba2[talent_id]" value="<%= @amoeba.talent_id %>">
+    <input type="hidden" id="amoeba2[generation]" name="amoeba2[generation]" value="<%= @amoeba.generation + 1 %>">
+
+    <input type="submit" value="create">
+  </form><br>
+<a href="/amoebas">Cancel</a>
+
+ 

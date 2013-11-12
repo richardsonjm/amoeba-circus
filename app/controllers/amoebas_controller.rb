@@ -1,5 +1,5 @@
 class AmoebasController < ApplicationController
-  before_action :set_amoeba, only: [:show, :edit, :update, :destroy]
+  before_action :set_amoeba, only: [:show, :edit, :update, :destroy, :split, :split_create]
   before_action :set_talents, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_acts, only: [:index, :show, :edit, :update, :destroy]
 
@@ -63,6 +63,28 @@ class AmoebasController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def split 
+  end 
+
+  def split_create
+    @amoeba.destroy
+
+    @amoeba1 = Amoeba.new
+    @amoeba1.name = params[:amoeba1][:name]
+    @amoeba1.talent_id = params[:amoeba1][:talent_id]
+    @amoeba1.generation = params[:amoeba1][:generation]
+    @amoeba1.save
+   
+    @amoeba2 = Amoeba.new
+    @amoeba2.name = params[:amoeba2][:name]
+    @amoeba2.talent_id = params[:amoeba2][:talent_id]
+    @amoeba2.generation = params[:amoeba2][:generation]
+    @amoeba2.save
+
+    redirect_to '/amoebas'
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
